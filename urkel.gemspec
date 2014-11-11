@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Urkel::VERSION
   spec.authors       = ["mo khan"]
   spec.email         = ["mo@mokhan.ca"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
-  spec.homepage      = ""
+  spec.summary       = %q{A client gem for posting errors to an urkel server.}
+  spec.description   = %q{A client gem for posting errors to an urkel server.}
+  spec.homepage      = "https://github.com/mokhan/urkel"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
