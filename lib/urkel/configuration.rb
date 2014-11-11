@@ -1,9 +1,9 @@
 module Urkel
   class Configuration
-    attr_reader :uri, :api_key
+    attr_accessor :api_host, :api_key
 
-    def initialize(api_host, api_key)
-      @uri = URI.parse(api_host)
+    def initialize(api_host = '', api_key = '')
+      @api_host = api_host
       @api_key = api_key
     end
 
@@ -15,6 +15,7 @@ module Urkel
     private
 
     def http_connection
+      uri = URI.parse(api_host)
       http = Net::HTTP.new(uri.host, uri.port)
       http.use_ssl = (uri.scheme == "https")
       http
