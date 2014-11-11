@@ -1,6 +1,4 @@
 module Urkel
-  class InvalidAPITokenError < StandardError; end
-
   class Connection
     API_ENDPOINT="/api/v1/failures"
 

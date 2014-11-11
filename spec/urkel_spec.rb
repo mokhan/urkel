@@ -16,5 +16,10 @@ describe Urkel do
       end
       expect(Urkel.oops(error)).to be_truthy
     end
+
+    it 'raises an error when not configured' do
+      Urkel.reset
+      expect(-> { Urkel.oops(error) }).to raise_error(Urkel::InvalidConfigurationError)
+    end
   end
 end
