@@ -18,6 +18,11 @@ module Urkel
     @connection.publish(error)
   end
 
+  def self.oops!(error)
+    raise InvalidConfigurationError.new unless @connection
+    @connection.publish!(error)
+  end
+
   def self.reset
     @connection = nil
   end
