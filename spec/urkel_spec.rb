@@ -5,7 +5,13 @@ describe Urkel do
     expect(Urkel::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  describe ".oops" do
+    it 'publishes a new error' do
+      Urkel.configure do |configuration|
+        configuration.api_host = 'http://localhost:3000'
+        configuration.api_key = '02513a35-b875-40a1-a1fc-f2d2582bdcc5'
+      end
+      Urkel.oops(error)
+    end
   end
 end
