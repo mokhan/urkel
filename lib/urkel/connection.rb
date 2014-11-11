@@ -37,7 +37,7 @@ module Urkel
         "error[message]" => error.message,
         "error[hostname]" => Socket.gethostname,
         "error[error_type]" => error.class.name,
-        "error[backtrace]" => error.backtrace,
+        "error[backtrace][]" => error.backtrace,
       }
     end
   end

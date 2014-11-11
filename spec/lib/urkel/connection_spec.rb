@@ -13,7 +13,7 @@ module Urkel
             "message" => error.message, 
             "hostname" => hostname, 
             "error_type" => error.class.name, 
-            "backtrace" => error.backtrace.last
+            "backtrace" => error.backtrace
           } 
         } 
       end
