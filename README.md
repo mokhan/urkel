@@ -1,6 +1,8 @@
 # Urkel
 
-TODO: Write a gem description
+![Steve Urkel](http://upload.wikimedia.org/wikipedia/en/d/da/2005_0308_urkel.jpg)
+
+Ooops... did I do that?
 
 ## Installation
 
