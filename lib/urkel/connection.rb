@@ -1,4 +1,6 @@
 module Urkel
+  class InvalidAPITokenError < StandardError; end
+
   class Connection
     API_ENDPOINT="/api/v1/failures"
 
@@ -9,6 +11,17 @@ module Urkel
     def publish(error)
       response = @configuration.request(request_for(error))
       response.is_a?(Net::HTTPOK)
+    end
+
+    def publish!(error)
+      response = @configuration.request(request_for(error))
+      if response.is_a? Net::HTTPOK
+        true
+      elsif response.is_a? Net::HTTPUnauthorized
+        raise InvalidAPITokenError.new
+      else
+        false
+      end
     end
 
     private
